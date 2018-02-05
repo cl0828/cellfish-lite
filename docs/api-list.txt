@@ -1,0 +1,33 @@
+
+GET /api/like/liked_post.php
+-> ok [post]
+
+POST /api/auth/change_password.php (old_password, new_password)
+-> ok | error wrong_password
+
+POST /api/auth/change_bio.php (bio)
+-> ok
+
+POST /api/auth/change_email.php (email)
+-> ok
+
+POST /api/auth/delete.php (username)
+-> ok | error "no_user"
+
+* POST /api/post/insert.php (title, content, image, tags)
+-> ok
+
+* POST /api/post/update.php (id, title, content, image, tags)
+-> ok
+
+GET /api/post/search.php (keywords)
+-> ok [post]
+
+GET /api/tag/list.php (tags)
+-> ok [post]
+
+POST /api/vote/up.php (comment)
+-> ok | error "already_up"
+
+POST /api/vote/down.php (comment)
+-> ok | error "already_down"

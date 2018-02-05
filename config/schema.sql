@@ -10,6 +10,8 @@ CREATE TABLE messages (
 
 CREATE TABLE users (
     username TEXT PRIMARY KEY,
+    email TEXT,
+    bio TEXT,
     password TEXT
 );
 
@@ -39,6 +41,19 @@ CREATE TABLE comments (
     username TEXT,
     content TEXT,
     created_at INTEGER
+);
+
+CREATE TABLE tags (
+    post TEXT,
+    tag TEXT,
+    PRIMARY KEY (post, tag)
+);
+
+CREATE TABLE votes (
+    comment TEXT,
+    username TEXT,
+    vote INTEGER,
+    PRIMARY KEY (comment, username)
 );
 
 INSERT INTO users VALUES ( 'admin', 'admin' );
